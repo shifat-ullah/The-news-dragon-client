@@ -1,10 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Outlet } from 'react-router-dom';
 
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col,  Container,  Row } from 'react-bootstrap';
 import Header from '../shared/Header/Header';
 import Footer from '../shared/Footer/Footer';
 import RightNav from '../Home/siteNev/RightNav/RightNav';
+
 const NewsLayout = () => {
     return (
         <>
@@ -20,7 +21,10 @@ const NewsLayout = () => {
             </Col>
   
           <Col sm={3} className='mt-2'>
-            <RightNav></RightNav>
+          
+          <RightNav></RightNav>
+           
+          
             </Col>
         </Row>
       </Container>

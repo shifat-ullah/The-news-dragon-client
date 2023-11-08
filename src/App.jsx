@@ -8,12 +8,16 @@ import RightNav from './page/Home/siteNev/RightNav/RightNav';
 import LeftNev from './page/Home/siteNev/LeftNev/LeftNev';
 
 import Catagorys from './page/Home/siteNev/LeftNev/Catagorys';
+import Navber from './page/shared/navber/Navber';
 
 function App() {
 
   return (
     <>
+      
       <Header></Header>
+      <Navber></Navber>
+      
       
       {/* ................................................................. */}
       <Container>
@@ -29,6 +33,7 @@ function App() {
         </Col>
 
         <Col sm={3} className='mt-2'>
+        
           <RightNav></RightNav>
           </Col>
       </Row>

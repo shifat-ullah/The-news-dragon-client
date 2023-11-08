@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Navber from "../../../shared/navber/Navber";
 
 const LeftNev = () => {
+    
     const [catagorys, setCatagorys]=useState([]);
     useEffect(()=>{
         fetch('http://localhost:5000/catagory')
@@ -14,11 +16,11 @@ const LeftNev = () => {
 
             <div className="px-4">
                 {
-                    catagorys.map(catagory => <p key={catagory.id}> 
+                    catagorys.map(catagory => <div key={catagory.id}> 
 
-                            <Link to={`/catagorys/ ${catagory.id}`} className=""><p>{catagory.name}</p></Link>
+                            <Link to={`/catagory/ ${catagory.id}`} className=""><p>{catagory.name}</p></Link>
 
-                    </p>)
+                    </div>)
                 }
             </div>
         </div>

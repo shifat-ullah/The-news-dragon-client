@@ -3,136 +3,38 @@ import App from './../../../App';
 import Catagorys from "../../Home/siteNev/LeftNev/Catagorys";
 import NewsLayout from "../../layout/NewsLayout";
 import News from "../../news/news/news";
-
-// const router = createBrowserRouter([
-
-
-//     {
-//       path: '/',
-//       element: <App></App>,
-
-//       children: [
-//         {
-//           path: '/',
-//           element: <Navigate to="/catagory/0" />
-//         },
-
-
-//         {
-//           path: 'category',
-//           element: <App></App>,
-//           children:[
-//             {
-//               path: ':id',
-//               element: <Catagorys />,
-//               loader:({params})=>fetch(`http://localhost:5000/catagory/${params.id}`),
-//             }
-//           ]
-//         },
-//       ]
-//     },
-
-// {
-//   path:"/news",
-//   element:<NewsLayout></NewsLayout>,
-//   children:[
-//       {
-//         path:':id',
-//         element:<News></News>,
-//         loader: ({params})=>fetch(`http://localhost:5000/news/${params.id}`),
-
-
-//       }
-//   ]
-// }
-//   ]);
-
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Navigate to="/category/0" />,
-//     children:[
-
-//   {
-//     path: '/',
-//     element: <App></App>
-//   },
-//   {
-//     path: ':id',
-//     element: <Catagorys />,
-//     loader: ({ params }) => fetch(`http://localhost:5000/catagory/${params.id}`),
-//   }
-//     ]
-//   },
-
-//   {
-//     path:"/news",
-//     element:<NewsLayout></NewsLayout>,
-//     children:[
-//         {
-//           path:':id',
-//           element:<News></News>,
-//           loader: ({params})=>fetch(`http://localhost:5000/news/${params.id}`),
-
-
-//         }
-//     ]
-//   }
-
-// ]);
-
-
-// const router = createBrowserRouter([
-//   // {
-//   //   path: '/',
-//   //   element: <App></App>,
-//   //   children: [
-//   //     {
-//   //       path: '/',
-//   //       element: <Navigate to="catagory/0" />
-//   //     },
-//   //     {
-//   //       path: 'catagory/:id',
-//   //       element: <Catagorys />,
-//   //       loader:({params})=>fetch(`http://localhost:5000/catagory/${params.id}`),
-//   //     }
-//   //   ]
-//   // },
-
-
-//   {
-//       path:"/news",
-//       element:<NewsLayout></NewsLayout>,
-//       children:[
-//           {
-//             path:':id',
-//             element:<News></News>,
-//             loader: ({params})=>fetch(`http://localhost:5000/news/${params.id}`),
-
-
-//           }
-//       ]
-//     }
-// ]);
-
-
-
-// export default router;
+import LoginLayout from "../../layout/Loginlayout/LoginLayout";
+import Login from "../../shared/login/Login";
+import Register from "../../shared/register/Register";
+import Privateroute from "../privetRoutr/Privateroute";
+import Terms from "../../shared/register/Terms";
 
 
 const router = createBrowserRouter([
   {
     path: '/',
+    element:<LoginLayout></LoginLayout>,
     children: [
       {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      },
+      {
         path: '/',
-        element: <Navigate to="/category/0" />
+        element: <Navigate to="/catagory/0" />
+      },
+      {
+        path: '/terms',
+        element: <Terms></Terms>
       }
     ]
   },
   {
-    path: 'category',
+    path: 'catagory',
     element: <App />,
     children: [
       {
@@ -148,7 +50,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: ':id',
-        element: <News></News>,
+        element: <Privateroute><News></News></Privateroute>,
        loader: ({params})=>fetch(`http://localhost:5000/news/${params.id}`),
       }
     ]

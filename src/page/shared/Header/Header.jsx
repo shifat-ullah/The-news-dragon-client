@@ -1,14 +1,13 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container'
 import logo from '../../../assets/logo.png'
 import moment from 'moment/moment';
 import Marquee from "react-fast-marquee";
-import { Button, Nav } from 'react-bootstrap';
-import { UserCircleIcon } from '@heroicons/react/24/solid'
-import { Link } from 'react-router-dom';
+import { AuthContext } from './../../../Authproviders/AuthProviders';
+import { useContext } from "react";
 
 const Header = () => {
-    
+
+const {user}=useContext(AuthContext); 
     return (
         <Container>
 
@@ -27,22 +26,7 @@ const Header = () => {
 
            {/* ........................navber.................................. */}
 
-           <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#pricing">About</Nav.Link>
-            <Nav.Link href="#pricing">Career</Nav.Link>
-          </Nav>
-          <div className='text-end'>
-            <Link><UserCircleIcon  className="h-25 w-25" /></Link>
-            <Link to=""><Button variant="primary">LogIn</Button></Link>
-          </div>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+           
 
             
 
